@@ -112,11 +112,11 @@ nav {
 
 /* AUTH PAGES (Register & Login) */
 .auth-section {
-    min-height: 90vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 20px;
+    padding: 20px;
     background-color: #f4f6f9;
 }
 
@@ -125,7 +125,7 @@ nav {
     padding: 40px;
     border-radius: 20px;
     width: 450px;
-    max-width: 100%;
+    max-width: 100%;s
     box-shadow: 0 10px 40px rgba(0,0,0,0.1);
 }
 
