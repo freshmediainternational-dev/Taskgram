@@ -5,6 +5,70 @@
         <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
         <title>Taskgram - Dashboard</title>
         <link rel="stylesheet" href="../css/style.css">
+        <style>
+            .dashboard {
+                max-width: 900px;
+                margin: 40px auto;
+                padding: 0 20px;
+            }
+
+            .welcome-box {
+                background: linear-gradient(135deg, #6c63ff, #48c774);
+                color: white;
+                padding: 30px;
+                border-radius: 15px;
+                margin-bottom: 30px;
+            }
+
+            .welcome-box h2 {
+                font-size: 24px;
+                margin-bottom: 8px;
+            }
+
+            .stats {
+                display: flex;
+                gap: 20px;
+                flex-wrap: wrap;
+                margin-bottom: 30px;
+            }
+
+            .stat-card {
+                background: white;
+                padding: 25px;
+                border-radius: 15px;
+                flex: 1;
+                min-width: 150px;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+                text-align: center;
+            }
+
+            .stat-card h3 {
+                font-size: 14px;
+                color: #888;
+                margin-bottom: 10px;
+            }
+
+            .amount {
+                font-size: 28px;
+                font-weight: 700;
+                color: #6c63ff;
+            }
+
+            .withdraw-section {
+                background: #6c63ff;
+                color: white;
+                padding: 15px 40px;
+                border: none;
+                border-radius: 30px;
+                font-size: 16px;
+                font-weight: 600;
+                cursor: pointer;
+            }
+
+            .btn-withdraw:hover {
+                background: #574fd6;
+            }
+        </style>
     </head>
     <body>
 
@@ -22,7 +86,7 @@
 
             <!--WELCOME-->
             <div class="welcome-box">
-                <h2>Welcome back, User!</h2>
+                <h2>Welcome back, User 👋</h2>
                 <p>Complete tasks and earn money daily</p>
             </div>
 
@@ -30,7 +94,7 @@
             <div class="stats">
             <div class="stat-card">
                 <h3>Total Earning</h3>
-                <p class="amount">N0.00</p>
+                <p class="amount">₦0.00</p>
             </div>
             <div class="stat-card">
                 <h3>Tasks Completed</h3>
@@ -48,6 +112,6 @@
             </div>
 
         </section>
-        
+
     </body>
 </html>
