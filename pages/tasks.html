@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+        <title>Taskgram - Tasks</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <style>
+            .task-section {
+                max-width: 900px;
+                margin: 40px auto;
+                padding: 0 20;
+            }
+
+            .task-header h2 {
+                margin-bottom: 30px;
+            }
+
+            .task-header h2 {
+                font-size: 28px;
+                color: #6c63ff;
+            }
+
+            .task-header p {
+                color: #888;
+                margin-top: 5px;
+            }
+
+            .task-card {
+                background: white;
+                padding: 25px;
+                border-radius: 15px;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+                margin-bottom: 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            .task-info h3 {
+                font-size: 18px;
+                color: #333;
+                margin-bottom: 5px;
+            }
+
+            .task-info p {
+                font-size: 14px;
+                color: #888;
+            }
+
+            .task-reward {
+                font-size: 22px;
+                font-weight: 700;
+                color: #48c774;
+            }
+
+            .btn-task {
+                background: #6c63ff;
+                color: white;
+                padding: 10px 25px;
+                border: none;
+                border-radius: 25px;
+                font-size: 14px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+
+            .btn-task:hover {
+                background: #574fd6;
+            }
+
+        </style>
+    </head>
+    <body>
+        <nav>
+            <div class="logo">Taskgram</div>
+            <div class="nav-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="#" class="btn-signup">Logout</a>
+            </div>
+        </nav>
+        
+        <section class="tasks-section">
+            <div class="tasks-header">
+                <h2>Available Tasks</h2>
+                <p>Complete tasks below to earn money</p>
+            </div>
+
+            <!--TASK 1-->
+            <div class="task-card">
+                <div class="task-info">
+                    <h3>Follow us on Instagram</h3>
+                    <p>Follow our Instagram page and stay followed</p>
+                </div>
+                <div class="task-reward">₦50</div>
+                <button class="btn-task">Start Task</button>
+            </div>
+
+            <!--TASK 2-->
+            <div class="task-card">
+                <div class="task-info">
+                    <h3>Like our Facebook Page</h3>
+                    <p>Like and follow our Facebook page</p>
+                </div>
+                <div class="task-reward">₦30</div>
+                <button class="btn-task">Start Task</button>
+            </div>
+
+            <!--TASK 3-->
+            <div class="task-card">
+                <div class="task-info">
+                    <h3>Subscribe on Youtube</h3>
+                    <p>Subscribe to our Youtube channel</p>
+                </div>
+                <div class="task-reward">₦100</div>
+                <button class="btn-task">Start Task</button>
+            </div>
+
+            <!--TASK 4-->
+            <div class="task-card">
+                <div class="task-info">
+                    <h3>Follow our X Account</h3>
+                    <p>Retweet our post and keep it up for 24hrs</p>
+                </div>
+                <div class="task-reward">₦40</div>
+                <button class="btn-task">Start Task</button>
+            </div>
+
+            <!--TASK 5-->
+            <div class="task-card">
+                <div class="task-info">
+                    <h3>Join our Telegram Group</h3>
+                    <p>Join our Telegram group and stay active</p>
+                </div>
+                <div class="task-reward">₦60</div>
+                    <button class="btn-task">Start Task</button>
+                </div>
+
+        </section>
+
+    </body>
+</html>
