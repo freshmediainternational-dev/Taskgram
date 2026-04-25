@@ -54,6 +54,34 @@
             </p>
             </div>
         </section>
+<script>
+document.querySelector('.btn-auth').addEventListener('click', async function(){
+    const full_name = document.querySelectorAll('input')[0].value;
+    const email = document.querySelectorAll('input')[1].value;
+    const phone = document.querySelectorAll('input')[2].value;
+    const password = document.querySelectorAll('input')[3].value;
+    const confirm_password = document.querySelectorAll('input')[4].value;
 
+    if(!full_name || !email || !phone || !password || !confirm_password){
+        alert('Please fill in all fields');
+        return;
+    }
+
+    const response = await fetch('https://taskgram.infinityfreeapp.com/api/register.php', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({full_name, email, phone, password, confirm_password})
+    });
+
+    const result = await response.json();
+
+    if(result.status === 'success'){
+        alert('Registration successful! Please login.');
+        window.location.href = 'login.html';
+    } else {
+        alert(result.message);
+    }
+});
+</script>
     </body>
 </html>
