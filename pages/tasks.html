@@ -141,5 +141,65 @@
 
         </section>
 
+        <script>
+    const user = JSON.parse(localStorage.getItem('user'));
+
+    if(!user){
+        window.location.href = 'login.html';
+    }
+
+    // Load tasks from database
+    async function loadTasks(){
+        const response = await fetch('https://taskgram.infinityfreeapp.com/api/tasks.php?user_id=' + user.id);
+        const result = await response.json();
+
+        if(result.status === 'success'){
+            const taskSection = document.querySelector('.tasks-section');
+            const header = document.querySelector('.tasks-header');
+            
+            // Remove existing task cards
+            document.querySelectorAll('.task-card').forEach(card => card.remove());
+
+            // Add tasks from database
+            result.tasks.forEach(task => {
+                const taskCard = `
+                <div class="task-card">
+                    <div class="task-info">
+                        <h3>${task.title}</h3>
+                        <p>${task.description}</p>
+                    </div>
+                    <div class="task-reward">₦${task.reward}</div>
+                    <button class="btn-task ${task.completed ? 'completed' : ''}" 
+                        onclick="completeTask(${task.id})"
+                        ${task.completed ? 'disabled' : ''}>
+                        ${task.completed ? 'Completed ✅' : 'Start Task'}
+                    </button>
+                </div>`;
+                taskSection.innerHTML += taskCard;
+            });
+        }
+    }
+
+    // Complete a task
+    async function completeTask(task_id){
+        const response = await fetch('https://taskgram.infinityfreeapp.com/api/complete_task.php', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({user_id: user.id, task_id: task_id})
+        });
+
+        const result = await response.json();
+
+        if(result.status === 'success'){
+            alert('Task completed! You earned ₦' + result.reward);
+            loadTasks();
+        } else {
+            alert(result.message);
+        }
+    }
+
+    loadTasks();
+</script>
+
     </body>
 </html>

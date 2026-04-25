@@ -112,6 +112,18 @@
             </div>
 
         </section>
+        <script>
+    // Get user from localStorage
+    const user = JSON.parse(localStorage.getItem('user'));
 
+    // If not logged in redirect to login
+    if(!user){
+        window.location.href = 'login.html';
+    }
+
+    // Display user data
+    document.querySelector('.welcome-box h2').textContent = 'Welcome back, ' + user.full_name + '! 👋';
+    document.querySelector('.amount').textContent = '₦' + user.balance;
+</script>
     </body>
 </html>
