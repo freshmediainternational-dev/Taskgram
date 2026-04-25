@@ -86,16 +86,22 @@ nav {
 .steps {
     display: flex;
     justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 30px;
+    flex-wrap: nowrap;
+    max-width: 900px;
+    margin: 0 auto;
 }
+
 .step {
     background: #ffffff;
     padding: 40px 30px;
     border-radius: 15px;
-    width: 250px;
-    box-shadow: 0 5px 20px rgba (0,0,0,0.08);
+    width: 100%;
+    max-width: 280px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
     transition: 0.3s;
+    text-align: center;
 }
 .step:hover {
     transform: translateY(-5px);
