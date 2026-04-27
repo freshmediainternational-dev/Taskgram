@@ -669,3 +669,101 @@ footer {
 .btn-withdraw:hover {
     background: #574fd6;
 }
+
+/* ADVERTISER SECTION */
+.advertiser-section {
+    padding: 100px 80px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #2d2d5e 100%);
+    color: white;
+}
+
+.advertiser-content {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.advertiser-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.advertiser-text h2 {
+    font-size: 38px;
+    font-weight: 800;
+    margin: 15px 0 20px;
+    line-height: 1.2;
+}
+
+.advertiser-text > p {
+    font-size: 16px;
+    opacity: 0.8;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+.advertiser-features {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.adv-feature {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.adv-icon {
+    font-size: 28px;
+    min-width: 40px;
+}
+
+.adv-feature h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #6c63ff;
+}
+
+.adv-feature p {
+    font-size: 14px;
+    opacity: 0.7;
+    line-height: 1.6;
+}
+
+.advertiser-stats {
+    flex: 1;
+    min-width: 250px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.adv-stat-card {
+    background: rgba(255,255,255,0.08);
+    padding: 30px 20px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.3s;
+}
+
+.adv-stat-card:hover {
+    background: rgba(108,99,255,0.3);
+}
+
+.adv-stat-card h3 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #6c63ff;
+    margin-bottom: 8px;
+}
+
+.adv-stat-card p {
+    font-size: 13px;
+    opacity: 0.7;
+}

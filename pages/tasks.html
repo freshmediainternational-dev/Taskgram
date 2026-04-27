@@ -1,187 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
-        <title>Taskgram - Tasks</title>
-        <link rel="stylesheet" href="../css/style.css">
-        <style>
-            .task-section {
-                max-width: 900px;
-                margin: 40px auto;
-                padding: 0 20;
-            }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taskgram - Tasks</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .tasks-section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
 
-            .task-header h2 {
-                margin-bottom: 30px;
-            }
+        .tasks-header {
+            margin-bottom: 30px;
+        }
 
-            .task-header h2 {
-                font-size: 28px;
-                color: #6c63ff;
-            }
+        .tasks-header h2 {
+            font-size: 28px;
+            color: #6c63ff;
+        }
 
-            .task-header p {
-                color: #888;
-                margin-top: 5px;
-            }
+        .tasks-header p {
+            color: #888;
+            margin-top: 5px;
+        }
 
-            .task-card {
-                background: white;
-                padding: 25px;
-                border-radius: 15px;
-                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-                margin-bottom: 20px;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                flex-wrap: wrap;
-                gap: 15px;
-            }
+        .task-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
 
-            .task-info h3 {
-                font-size: 18px;
-                color: #333;
-                margin-bottom: 5px;
-            }
+        .task-info h3 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 5px;
+        }
 
-            .task-info p {
-                font-size: 14px;
-                color: #888;
-            }
+        .task-info p {
+            font-size: 14px;
+            color: #888;
+        }
 
-            .task-reward {
-                font-size: 22px;
-                font-weight: 700;
-                color: #48c774;
-            }
+        .task-reward {
+            font-size: 22px;
+            font-weight: 700;
+            color: #48c774;
+        }
 
-            .btn-task {
-                background: #6c63ff;
-                color: white;
-                padding: 10px 25px;
-                border: none;
-                border-radius: 25px;
-                font-size: 14px;
-                font-weight: 600;
-                cursor: pointer;
-                transition: 0.3s;
-            }
+        .btn-task {
+            background: #6c63ff;
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-            .btn-task:hover {
-                background: #574fd6;
-            }
+        .btn-task:hover {
+            background: #574fd6;
+        }
 
-        </style>
-    </head>
-    <body>
-        <nav>
-            <div class="logo">Taskgram</div>
-            <div class="nav-links">
-                <a href="dashboard.html">Dashboard</a>
-                <a href="#" class="btn-signup">Logout</a>
-            </div>
-        </nav>
-        
-        <section class="tasks-section">
-            <div class="tasks-header">
-                <h2>Available Tasks</h2>
-                <p>Complete tasks below to earn money</p>
-            </div>
+        .btn-task:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
 
-            <!--TASK 1-->
-            <div class="task-card">
-                <div class="task-info">
-                    <h3>Follow us on Instagram</h3>
-                    <p>Follow our Instagram page and stay followed</p>
-                </div>
-                <div class="task-reward">₦50</div>
-                <button class="btn-task">Start Task</button>
-            </div>
+    <nav>
+        <div class="logo">Task<span style="color:#6c63ff">gram</span></div>
+        <div class="nav-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="#" class="btn-signup" onclick="logout()">Logout</a>
+        </div>
+    </nav>
 
-            <!--TASK 2-->
-            <div class="task-card">
-                <div class="task-info">
-                    <h3>Like our Facebook Page</h3>
-                    <p>Like and follow our Facebook page</p>
-                </div>
-                <div class="task-reward">₦30</div>
-                <button class="btn-task">Start Task</button>
-            </div>
+    <section class="tasks-section">
+        <div class="tasks-header">
+            <h2>Available Tasks</h2>
+            <p>Complete tasks below to earn money</p>
+        </div>
+    </section>
 
-            <!--TASK 3-->
-            <div class="task-card">
-                <div class="task-info">
-                    <h3>Subscribe on Youtube</h3>
-                    <p>Subscribe to our Youtube channel</p>
-                </div>
-                <div class="task-reward">₦100</div>
-                <button class="btn-task">Start Task</button>
-            </div>
-
-            <!--TASK 4-->
-            <div class="task-card">
-                <div class="task-info">
-                    <h3>Follow our X Account</h3>
-                    <p>Retweet our post and keep it up for 24hrs</p>
-                </div>
-                <div class="task-reward">₦40</div>
-                <button class="btn-task">Start Task</button>
-            </div>
-
-            <!--TASK 5-->
-            <div class="task-card">
-                <div class="task-info">
-                    <h3>Join our Telegram Group</h3>
-                    <p>Join our Telegram group and stay active</p>
-                </div>
-                <div class="task-reward">₦60</div>
-                    <button class="btn-task">Start Task</button>
-                </div>
-
-        </section>
-
-        <script>
+   <script>
     const user = JSON.parse(localStorage.getItem('user'));
 
     if(!user){
         window.location.href = 'login.html';
     }
 
-    // Load tasks from database
     async function loadTasks(){
         const response = await fetch('https://taskgram.infinityfreeapp.com/api/tasks.php?user_id=' + user.id);
         const result = await response.json();
 
         if(result.status === 'success'){
             const taskSection = document.querySelector('.tasks-section');
-            const header = document.querySelector('.tasks-header');
-            
-            // Remove existing task cards
             document.querySelectorAll('.task-card').forEach(card => card.remove());
 
-            // Add tasks from database
             result.tasks.forEach(task => {
-                const taskCard = `
-                <div class="task-card">
+                const taskCard = document.createElement('div');
+                taskCard.className = 'task-card';
+                taskCard.id = 'task-' + task.id;
+
+                let button = '';
+                if(task.completed == 1){
+                    button = '<button class="btn-task" style="background:#48c774" disabled>Completed ✅</button>';
+                } else if(task.title.toLowerCase().includes('telegram')){
+                    button = `<button class="btn-task" onclick="startTelegramTask(${task.id}, '${task.link}')">Start Task</button>`;
+                } else {
+                    button = `<button class="btn-task" onclick="startTask(${task.id}, '${task.link}')">Start Task</button>`;
+                }
+
+                taskCard.innerHTML = `
                     <div class="task-info">
                         <h3>${task.title}</h3>
                         <p>${task.description}</p>
                     </div>
                     <div class="task-reward">₦${task.reward}</div>
-                    <button class="btn-task ${task.completed ? 'completed' : ''}" 
-                        onclick="completeTask(${task.id})"
-                        ${task.completed ? 'disabled' : ''}>
-                        ${task.completed ? 'Completed ✅' : 'Start Task'}
-                    </button>
-                </div>`;
-                taskSection.innerHTML += taskCard;
+                    ${button}
+                `;
+                taskSection.appendChild(taskCard);
             });
         }
     }
 
-    // Complete a task
-    async function completeTask(task_id){
+    function startTask(task_id, link){
+        window.open(link, '_blank');
+        const card = document.getElementById('task-' + task_id);
+        const btn = card.querySelector('.btn-task');
+        btn.textContent = 'Claim Reward';
+        btn.style.background = '#48c774';
+        btn.onclick = function(){ claimReward(task_id); };
+    }
+
+    function startTelegramTask(task_id, link){
+        window.open(link, '_blank');
+        const card = document.getElementById('task-' + task_id);
+        card.innerHTML += `
+            <div class="telegram-verify" style="width:100%;margin-top:10px;">
+                <input type="text" id="tg-username-${task_id}" 
+                    placeholder="Enter your Telegram username e.g. IsraelTrade" 
+                    style="padding:10px;border:2px solid #e0e0e0;border-radius:10px;width:60%;font-size:14px;">
+                <button class="btn-task" style="margin-left:10px;" 
+                    onclick="verifyTelegram(${task_id})">Verify & Claim</button>
+            </div>
+        `;
+    }
+
+    async function verifyTelegram(task_id){
+        const username = document.getElementById('tg-username-' + task_id).value.trim();
+
+        if(!username){
+            alert('Please enter your Telegram username');
+            return;
+        }
+
+        const response = await fetch('https://taskgram.infinityfreeapp.com/api/verify_telegram.php', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                user_id: user.id,
+                task_id: task_id,
+                telegram_username: username.replace('@', '')
+            })
+        });
+
+        const result = await response.json();
+
+        if(result.status === 'success'){
+            alert('✅ Verified! You earned ₦' + result.reward);
+            user.balance = parseFloat(user.balance) + parseFloat(result.reward);
+            localStorage.setItem('user', JSON.stringify(user));
+            loadTasks();
+        } else {
+            alert('❌ ' + result.message);
+        }
+    }
+
+    async function claimReward(task_id){
         const response = await fetch('https://taskgram.infinityfreeapp.com/api/complete_task.php', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
@@ -192,14 +201,21 @@
 
         if(result.status === 'success'){
             alert('Task completed! You earned ₦' + result.reward);
+            user.balance = parseFloat(user.balance) + parseFloat(result.reward);
+            localStorage.setItem('user', JSON.stringify(user));
             loadTasks();
         } else {
             alert(result.message);
         }
     }
 
+    function logout(){
+        localStorage.removeItem('user');
+        window.location.href = '../index.html';
+    }
+
     loadTasks();
 </script>
 
-    </body>
+</body>
 </html>

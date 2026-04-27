@@ -112,18 +112,24 @@
             </div>
 
         </section>
-        <script>
-    // Get user from localStorage
+   <script>
     const user = JSON.parse(localStorage.getItem('user'));
 
-    // If not logged in redirect to login
     if(!user){
         window.location.href = 'login.html';
     }
 
     // Display user data
     document.querySelector('.welcome-box h2').textContent = 'Welcome back, ' + user.full_name + '! 👋';
-    document.querySelector('.amount').textContent = '₦' + user.balance;
+    
+    // Display balance
+    const amounts = document.querySelectorAll('.amount');
+    amounts[0].textContent = '₦' + parseFloat(user.balance).toFixed(2);
+
+    function logout(){
+        localStorage.removeItem('user');
+        window.location.href = '../index.html';
+    }
 </script>
     </body>
 </html>

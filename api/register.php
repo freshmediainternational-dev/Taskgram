@@ -11,8 +11,8 @@ $email = trim($data['email']);
 $phone = trim($data['phone']);
 $password = $data['password'];
 $confirm_password = $data['confirm_password'];
+$account_type = $data['account_type'];
 
-// Validate
 if(empty($full_name) || empty($email) || empty($phone) || empty($password)){
     echo json_encode(["status" => "error", "message" => "All fields are required"]);
     exit;
@@ -23,7 +23,6 @@ if($password !== $confirm_password){
     exit;
 }
 
-// Check if email exists
 $stmt = $pdo->prepare("SELECT id FROM users WHERE email = ?");
 $stmt->execute([$email]);
 if($stmt->rowCount() > 0){
@@ -31,12 +30,10 @@ if($stmt->rowCount() > 0){
     exit;
 }
 
-// Hash password
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-// Insert user
-$stmt = $pdo->prepare("INSERT INTO users (full_name, email, phone, password) VALUES (?, ?, ?, ?)");
-$stmt->execute([$full_name, $email, $phone, $hashed_password]);
+$stmt = $pdo->prepare("INSERT INTO users (full_name, email, phone, password, account_type) VALUES (?, ?, ?, ?, ?)");
+$stmt->execute([$full_name, $email, $phone, $hashed_password, $account_type]);
 
 echo json_encode(["status" => "success", "message" => "Registration successful"]);
 ?>
