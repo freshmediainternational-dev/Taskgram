@@ -3,6 +3,7 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
 
 require_once 'config.php';
+require_once 'send_email.php';
 
 $data = json_decode(file_get_contents("php://input"), true);
 
@@ -32,8 +33,19 @@ if($stmt->rowCount() > 0){
 
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-$stmt = $pdo->prepare("INSERT INTO users (full_name, email, phone, password, account_type) VALUES (?, ?, ?, ?, ?)");
-$stmt->execute([$full_name, $email, $phone, $hashed_password, $account_type]);
+// Generate 6-digit verification code
+$code = rand(100000, 999999);
+$expires_at = date('Y-m-d H:i:s', strtotime('+10 minutes'));
 
-echo json_encode(["status" => "success", "message" => "Registration successful"]);
+$stmt = $pdo->prepare("INSERT INTO users (full_name, email, phone, password, account_type, verification_code, code_expires_at, is_verified) VALUES (?, ?, ?, ?, ?, ?, ?, 0)");
+$stmt->execute([$full_name, $email, $phone, $hashed_password, $account_type, $code, $expires_at]);
+
+// Send verification email
+$sent = sendVerificationEmail($email, $full_name, $code);
+
+if($sent){
+    echo json_encode(["status" => "success", "message" => "Registration successful! Check your email for verification code."]);
+} else {
+    echo json_encode(["status" => "success", "message" => "Registration successful! But email could not be sent. Contact support."]);
+}
 ?>
