@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taskgram - Earn Money Online</title>
+    <title>Taskgram - Earn & Advertise Online</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
@@ -23,12 +23,12 @@
     <!-- HERO SECTION -->
     <section class="hero">
         <div class="hero-content">
-            <div class="hero-badge">🇳🇬 Nigeria's #1 Task Platform</div>
-            <h1>Earn Real Money<br>Completing Simple<br><span>Social Media Tasks</span></h1>
-            <p>Join over 10,000 Nigerians earning daily by following, liking, subscribing and more. Withdraw to your bank account instantly!</p>
+            <div class="hero-badge">🇳🇬 Nigeria's #1 Task & Promotion Platform</div>
+            <h1>Earn Money or<br>Grow Your Business<br><span>All in One Place</span></h1>
+            <p>Whether you want to earn daily by completing simple tasks or promote your business to thousands of real Nigerians — Taskgram is built for you!</p>
             <div class="hero-buttons">
-                <a href="pages/register.html" class="btn-main">Start Earning Now →</a>
-                <a href="pages/about.html" class="btn-outline">Learn More</a>
+                <a href="pages/register.html" class="btn-main">💰 Start Earning →</a>
+                <a href="pages/register.html" class="btn-outline">📢 Advertise Business</a>
             </div>
             <div class="hero-stats">
                 <div class="hero-stat">
@@ -40,8 +40,8 @@
                     <span>Paid Out</span>
                 </div>
                 <div class="hero-stat">
-                    <strong>100+</strong>
-                    <span>Daily Tasks</span>
+                    <strong>500+</strong>
+                    <span>Businesses</span>
                 </div>
             </div>
         </div>
@@ -74,6 +74,39 @@
         </div>
     </section>
 
+    <!-- TWO SIDES SECTION -->
+    <section class="two-sides">
+        <div class="side earner-side">
+            <div class="side-icon">💰</div>
+            <h2>For Earners</h2>
+            <p>Complete simple social media tasks and earn real money from your phone daily</p>
+            <ul class="side-list">
+                <li>✅ Free to join — no hidden charges</li>
+                <li>✅ Earn ₦30 - ₦500 per task</li>
+                <li>✅ Follow, like, subscribe and more</li>
+                <li>✅ Withdraw to any Nigerian bank</li>
+                <li>✅ 100+ tasks available daily</li>
+            </ul>
+            <a href="pages/register.html" class="btn-main">Start Earning Free →</a>
+        </div>
+        <div class="sides-divider">
+            <span>OR</span>
+        </div>
+        <div class="side advertiser-side">
+            <div class="side-icon">📢</div>
+            <h2>For Advertisers</h2>
+            <p>Promote your business to thousands of real active Nigerians at an affordable price</p>
+            <ul class="side-list">
+                <li>✅ Real followers and engagement</li>
+                <li>✅ Start from as low as ₦1,000</li>
+                <li>✅ Instagram, YouTube, Twitter & more</li>
+                <li>✅ Track campaign results live</li>
+                <li>✅ Fast delivery within hours</li>
+            </ul>
+            <a href="pages/register.html" class="btn-green">Start Advertising →</a>
+        </div>
+    </section>
+
     <!-- TRUSTED BY -->
     <section class="trusted">
         <p>Tasks available from top platforms</p>
@@ -91,14 +124,20 @@
     <section class="how-it-works">
         <div class="section-header">
             <h2>How It Works</h2>
-            <p>Start earning in 3 simple steps</p>
+            <p>Start earning or advertising in 3 simple steps</p>
         </div>
-        <div class="steps">
+
+        <div class="how-tabs">
+            <button class="tab-btn active" onclick="showTab('earner-steps')">💰 For Earners</button>
+            <button class="tab-btn" onclick="showTab('advertiser-steps')">📢 For Advertisers</button>
+        </div>
+
+        <div id="earner-steps" class="steps">
             <div class="step">
                 <div class="step-number">01</div>
                 <div class="step-icon">📝</div>
                 <h3>Register Free</h3>
-                <p>Create your free account in seconds. No hidden charges, no credit card required.</p>
+                <p>Create your free earner account in seconds. No credit card required.</p>
             </div>
             <div class="step-arrow">→</div>
             <div class="step">
@@ -113,6 +152,29 @@
                 <div class="step-icon">💸</div>
                 <h3>Get Paid</h3>
                 <p>Withdraw your earnings directly to your Nigerian bank account within 24 hours.</p>
+            </div>
+        </div>
+
+        <div id="advertiser-steps" class="steps" style="display:none;">
+            <div class="step">
+                <div class="step-number">01</div>
+                <div class="step-icon">📋</div>
+                <h3>Create Account</h3>
+                <p>Register as an advertiser and set up your business profile in minutes.</p>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="step">
+                <div class="step-number">02</div>
+                <div class="step-icon">🎯</div>
+                <h3>Post Your Task</h3>
+                <p>Create your campaign, set your budget and describe what you need done.</p>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="step">
+                <div class="step-number">03</div>
+                <div class="step-icon">📈</div>
+                <h3>Watch it Grow</h3>
+                <p>Thousands of earners complete your task and your business grows instantly.</p>
             </div>
         </div>
     </section>
@@ -188,7 +250,7 @@
             </div>
             <div class="testimonial-card">
                 <div class="stars">⭐⭐⭐⭐⭐</div>
-                <p>"Withdrawals are fast and reliable. I get my money within hours. Best earning platform in Nigeria!"</p>
+                <p>"I promoted my Instagram page on Taskgram and gained over 500 real followers in 2 days. Amazing platform!"</p>
                 <div class="testimonial-author">
                     <div class="author-avatar">TA</div>
                     <div>
@@ -200,71 +262,14 @@
         </div>
     </section>
 
-    <!-- ADVERTISER SECTION -->
-<section class="advertiser-section">
-    <div class="advertiser-content">
-        <div class="advertiser-text">
-            <div class="hero-badge">📢 For Business Owners</div>
-            <h2>Grow Your Business With Real People</h2>
-            <p>Promote your brand to thousands of active Nigerians. Get real followers, likes, subscribers and more at an affordable price.</p>
-            <div class="advertiser-features">
-                <div class="adv-feature">
-                    <span class="adv-icon">🎯</span>
-                    <div>
-                        <h4>Targeted Promotion</h4>
-                        <p>Reach real Nigerian users who will genuinely engage with your brand</p>
-                    </div>
-                </div>
-                <div class="adv-feature">
-                    <span class="adv-icon">💳</span>
-                    <div>
-                        <h4>Affordable Budget</h4>
-                        <p>Set your own budget. Start promoting from as low as ₦1,000</p>
-                    </div>
-                </div>
-                <div class="adv-feature">
-                    <span class="adv-icon">📊</span>
-                    <div>
-                        <h4>Track Results</h4>
-                        <p>Monitor your campaign progress in real time from your dashboard</p>
-                    </div>
-                </div>
-                <div class="adv-feature">
-                    <span class="adv-icon">⚡</span>
-                    <div>
-                        <h4>Fast Delivery</h4>
-                        <p>Your tasks go live immediately and results start coming within hours</p>
-                    </div>
-                </div>
-            </div>
-            <a href="pages/register.html" class="btn-main" style="margin-top:30px; display:inline-block;">Start Advertising →</a>
-        </div>
-        <div class="advertiser-stats">
-            <div class="adv-stat-card">
-                <h3>10,000+</h3>
-                <p>Active Earners</p>
-            </div>
-            <div class="adv-stat-card">
-                <h3>500+</h3>
-                <p>Businesses Served</p>
-            </div>
-            <div class="adv-stat-card">
-                <h3>₦1,000</h3>
-                <p>Minimum Budget</p>
-            </div>
-            <div class="adv-stat-card">
-                <h3>24hrs</h3>
-                <p>Campaign Goes Live</p>
-            </div>
-        </div>
-    </div>
-</section>
-
     <!-- CTA -->
     <section class="cta">
-        <h2>Ready to Start Earning?</h2>
-        <p>Join thousands of Nigerians already earning on Taskgram today!</p>
-        <a href="pages/register.html" class="btn-main">Create Free Account →</a>
+        <h2>Ready to Get Started?</h2>
+        <p>Join thousands of Nigerians already earning and advertising on Taskgram!</p>
+        <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+            <a href="pages/register.html" class="btn-main">💰 Start Earning Free →</a>
+            <a href="pages/register.html" class="btn-outline" style="border-color:white; color:white;">📢 Advertise My Business</a>
+        </div>
     </section>
 
     <!-- FOOTER -->
@@ -272,7 +277,7 @@
         <div class="footer-content">
             <div class="footer-brand">
                 <h3>Task<span>gram</span></h3>
-                <p>Nigeria's most trusted platform for earning money online through simple social media tasks.</p>
+                <p>Nigeria's most trusted platform for earning money online and promoting businesses through simple social media tasks.</p>
             </div>
             <div class="footer-links">
                 <h4>Quick Links</h4>
@@ -291,6 +296,17 @@
             <p>© 2026 Taskgram. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        function showTab(tab){
+            document.getElementById('earner-steps').style.display = 'none';
+            document.getElementById('advertiser-steps').style.display = 'none';
+            document.getElementById(tab).style.display = 'flex';
+
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
 
 </body>
 </html>
