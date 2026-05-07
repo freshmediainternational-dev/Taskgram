@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Taskgram - Advertisers Dashboard</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <style>
+            .adv-dashboard {
+                max-width: 1000px;
+                margin: 40px auto;
+                padding: 0 20px;
+            }
+
+            .adv-welcome {
+                background: linear-gradient(135deg, #1a1a2e, #2d2d5e);
+                color: white;
+                padding: 30px;
+                border-radius: 15px;
+                margin-bottom: 30px;
+            }
+
+            .adv-welcome h2 {
+                font-size: 24px;
+                margin-bottom: 8px;
+            }
+
+            .adv-welcome p {
+                opacity: 0.8;
+                font-size: 14px;
+            }
+
+            .adv-stats {
+                display: flex;
+                gap: 20px;
+                flex-wrap: wrap;
+                margin-bottom: 30px;
+            }
+
+            .adv-stat-card {
+                background: white;
+                padding: 25px;
+                border-radius: 15px;
+                flex: 1;
+                min-width: 150px;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+                text-align: center;
+            }
+
+            .adv-stat-card h3 {
+                font-size: 14px;
+                color: #888;
+                margin-bottom: 10px;
+            }
+
+            .adv-stat-card p {
+                font-size: 28px;
+                font-weight: 700;
+                color: #6c63ff;
+            }
+
+            .adv-section {
+                background: white;
+                padding: 30px;
+                border-radius: 15px;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+                margin-bottom: 30px;
+            }
+
+            .adv-section h2 {
+                font-size: 22px;
+                color: 6c63ff;
+                margin-bottom: 25px;
+            }
+
+            .campaign-form {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .campaign-form .form-group {
+                margin-bottom: 0;
+            }
+
+            .campaign-form .form-group {
+                margin-bottom: 0;
+            }
+
+            .campaign-form .form-group.full-width {
+                grid-column: span 2;
+            }
+
+            .campaign-form input,
+            .campaign-form select,
+            .campaign-form textarea {
+                display: block;
+                width: 100%;
+                padding: 12px 15px;
+                border: 2px solid #e0e0e0;
+                border-radius: 10px;
+                font-size: 14px;
+                outline: none;
+                transition: 0.3s;
+                box-sizing: border-box;
+                font-family: 'Inter', sans-serif;
+            }
+
+            .campaign-form label {
+                display: block;
+                font-size: 14px;
+                font-weight: 600;
+                margin-bottom: 6px;
+                color: #444;
+            }
+
+            .campaign-form textarea {
+                height: 100px;
+                resize: none;
+            }
+
+            .btn-campaign {
+                background: #6c63ff;
+                color: white;
+                padding: 14px 30px;
+                border: none;
+                border-radius: 10px;
+                font-size: 15px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: 0.3s;
+                margin-top: 15px;
+            }
+
+            .btn-campaign:hover {
+                background: #574fd6;
+            }
+
+            .campaign-card {
+                background: #f8f7ff;
+                padding: 20px;
+                border-radius: 12px;
+                margin-bottom: 15px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            .campaign-info h3 {
+                font-size: 16px;
+                color: #1a1a2e;
+                margin-bottom: 5px;
+            }
+
+            .campaign-info p {
+                font-size: 13px;
+                color: #888;
+            }
+
+            .campaign-badge {
+                padding: 5px 15px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: 600;
+            }
+
+            .badge-active {
+                background: #e6fff4;
+                color: #48c774;
+            }
+
+            .badge-pending {
+                background: #fff8e6;
+                color: #f39c12;
+            }
+
+            .badge-completed {
+                background: #f0eeff;
+                color: #6c63ff;
+            }
+
+            .campaign-stats {
+                display: flex;
+                gap: 20px;
+            }
+
+            .campaign-stat {
+                text-align: center;
+            }
+
+            .campaign-stat strong {
+                display: block;
+                font-size: 18px;
+                color: #6c63ff;
+            }
+
+            .campaign-stat span {
+                font-size: 11px;
+                color: #888;
+            }
+
+            .fund-box {
+                display: flex;
+                gap: 15px;
+                align-items: flex-end;
+                flex-wrap: wrap;
+            }
+
+            .fund-box .form-group {
+                flex: 1;
+                min-width: 200px;
+                margin-bottom: 0;
+            }
+
+            .fund-box input {
+                display: block;
+                width: 100%;
+                padding: 12px 15px;
+                border: 2px solid #e0e0e0;
+                border-radius: 10px;
+                font-size: 14px;
+                outline: none;
+                transition: 0.3s;
+                box-sizing: border-box;
+            }
+
+            .fund-box input:focus {
+                border-color: #6c63ff;
+            }
+
+            .fund-box label {
+                display: block;
+                font-size: 14px;
+                font-weight: 600;
+                margin-bottom: 6;
+                color: #444;
+            }
+
+            .btn-fund {
+                background: #48c774;
+                color: white;
+                padding: 14px 30px;
+                border: none;
+                border-radius: 10px;
+                font-size: 15px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+
+            .btn-fund:hover {
+                background: #3da363;
+            }
+        </style>
+    </head>
+    <body>
+
+        <nav>
+            <div class="logo">Task<span style="color: #6c63ff;">gram</span></div>
+            <div class="nav-links">
+                <a href="#" onclick="logout()">logout</a>
+            </div>
+        </nav>
+
+        <div class="adv-dashboard">
+
+            <!--WELCOME-->
+            <div class="adv-welcome">
+                <h2 id="adv-welcometext">welcome back!</h2>
+                <p>manage your campaings and grow your business</p>
+            </div>
+
+            <!--STATS-->
+            <div class="adv-stats">
+                <div class="adv-stat-card">
+                    <h3>Wallet Balance</h3>
+                    <p id="adv-balance">N0.00</p>
+                </div>
+                <div class="adv-stat-card">
+                    <h3>Active Campaings</h3>
+                    <p id="adv-campaigns">0</p>
+                </div>
+                <div class="adv-stat-card">
+                    <h3>Total Task Done</h3>
+                    <p id="adv-task-done">0</p>
+                </div>
+                <div class="adv-stat-card">
+                    <h3>Total Spent</h3>
+                    <p id="adv-spent">N0</p>
+                </div>
+            </div>
+
+            <!--FUND WALLET-->
+            <div class="adv-section">
+                <h2>Fund Your Wallet</h2>
+                <p style="color:#888;font-size: 14px;margin-bottom: 20px;">Add funds to your wallet to start running campaigns. Minimum N1,000</p>
+                <div class="fund-box">
+                    <div class="form-group">
+                        <label>Amount (N)</label>
+                        <input type="number" id="fund-amount" placeholder="Enter amount e.g. 5000" min="1000">
+                    </div>
+                    <button class="btn-fund" onclick="fundwallet()">Fund Wallet  </button>
+                </div>
+            </div>
+
+            <!--CREATE CAMPAIGN-->
+            <div class="adv-section">
+                <h2>Create New Campaing</h2>
+                <div class="campaign-form">
+                    <div class="form-group">
+                        <label>Campaign Title</label>
+                        <input type="text" id="camp-title" placeholder="e.g. Follow my Instagram page">
+                    </div>
+                    <div class="form-group">
+                        <label>Platform</label>
+                        <select id="camp-platform">
+                            <option value="">Select platform</option>
+                            <option value="">instagram</option>
+                            <option value="">facebook</option>
+                            <option value="">youtube</option>
+                            <option value="">twitter</option>
+                            <option value="">telegram</option>
+                            <option value="">tiktok</option>
+                            <option value="">linkedin</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Task Type</label>
+                        <select id="camp-type">
+                            <option value="">select task type</option>
+                            <option value="">Follow/Subscribe</option>
+                            <option value="">Like/React</option>
+                            <option value="">Comment</option>
+                            <option value="">Share/Retweet</option>
+                            <option value="">Join Group</option>
+                            <option value="">Watch Video</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Reward per Task (N)</label>
+                        <input type="number" id="camp-reward" placeholder="e.g. 50" min="10">
+                    </div>
+                    <div class="form-group">
+                        <label>Number of Task Needed</label>
+                        <input type="number" id="camp-quantity" placeholder="e.g. 100" min="10">
+                    </div>
+                    <div class="form-group">
+                        <label>Your link</label>
+                        <input type="url" id="camp-link" placeholder="https://instagram.com/yourpage">
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Task Description</label>
+                        <input type="number" id="camp-desc" placeholder="Describe what earners should go e.g. Follow our instagrampage and stay followed for 30 days"></textarea>
+                    </div>
+                </div>
+                
+                <!--MY CAMPAIGNS-->
+                <div class="adv-section">
+                    <h2>My Campaign</h2>
+                    <div id="campaign-list">
+                        <p style="color:#888;text-align:center;">No campaigns yet. create your first campaign above!</p>
+                    </div>
+                </div>
+
+            </div>
+            <script>
+                const user = JSON.parse(localStorage.getItem('user'));
+
+                if(!user || user.account_type !== 'advertiser') {
+                    window.location.href = 'login.html';
+                }
+
+                document.getElementById('adv-welcome-text'). textContent = 'Welcome back, ' + user.full_name + '!';
+                document.getElementById('adv-balance'). textContent = 'N' + parseFloat(user.balance).toFixed(2);
+
+                function fundwallet(){
+                    const amount = document.getElemmentById('fund-amount').value;
+                    if(!amount || amount < 1000){
+                        alert('minimum funding amount is N1000');
+                        return
+                    }
+                    // Paystack payment integration will go here
+                    alert('Payment gateway coming soon! Contact support to fund your wallet manually.');
+                }
+
+                async function createCampaign(){
+                    const title = document.getElementById('camp-title').value;
+                    const platform = document.getElementById('camp-platform').value;
+                    const type = document.getElementById('camp-style').value;
+                    const reward = document.getElementById('camp-reward').value;
+                    const quantity = document.getElementById('camp-quantity').value;
+                    const link = document.getElementById('camp-link').value;
+                    const description = document.getElementById('camp-desc').value;
+                    
+                    if(!title || !platform || !type || !reward || !quantity || !link || !description){
+                        alert('please fill in all fildes');
+                        return;
+                    }
+
+                    const total_cost = reward * quantity;
+
+                    if(total_cost > parseFloat(user.balance)){
+                        alert('insufficient wallet balance! Total cost N' + total_cost + '. please fund your wallet first. ');
+                        return;
+                    }
+
+                    alert ('Campaign feature coming soon! Fund your wallet and our team will set up your campaign manually for now.');
+                }
+
+                function logout(){
+                    localStorage.removeItem('user');
+                    window.location.href = '../index.html';
+                }
+            </script>
+
+        </body>
+</html>

@@ -240,6 +240,11 @@
     </div>
 
     <script>
+        // Check if admin is logged in
+        if(!localStorage.getItem('admin')){
+            window.location.href ='login.html';
+        }
+        
         const API = 'https://taskgram.infinityfreeapp.com/api';
 
         // Load all data
